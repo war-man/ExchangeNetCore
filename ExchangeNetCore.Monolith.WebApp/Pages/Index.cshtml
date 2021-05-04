@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div style="margin-top: 20px">
+    <div class="row">
+        <div class="col-sm">
+            <div>
+                <form>
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-success active">
+                            <input type="radio" name="type" id="type-buy" checked value="0"> BUY
+                        </label>
+                        <label class="btn btn-danger">
+                            <input type="radio" name="type" id="type-sell" value="1"> SELL
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input type="text" class="form-control" id="price">
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="text" class="form-control" id="amount">
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-block" onclick="submitOrder()">Order</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm">
+            <h6>ASK</h6>
+            <table id="orderbook-sell" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+            </table>
+            <p></p>
+            <h6>BID</h6>
+            <table id="orderbook-buy" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
